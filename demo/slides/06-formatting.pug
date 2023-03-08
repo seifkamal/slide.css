@@ -1,0 +1,23 @@
+mixin snippet_details
+  pre: code.
+    &lt;details&gt;
+      &lt;summary&gt;FYI&lt;/summary&gt;
+      &lt;p&gt;Context is important.&lt;/p&gt;
+    &lt;/details&gt;
+
+mixin snippet_blockquote
+  pre: code &lt;blockquote&gt;You can quote me on that.&lt;/blockquote&gt;
+
+mixin snippet_abbr
+  pre: code &lt;abbr title="Looks good to me"&gt;LGTM&lt;/abbr&gt;
+
+section#formatting
+  h3: a(href="#formatting") Formatting
+  details(open)
+    summary FYI
+    p Context is important.
+  +snippet_details
+  blockquote You can quote me on that.
+  +snippet_blockquote
+  abbr(title="Looks good to me") LGTM
+  +snippet_abbr

@@ -1,0 +1,25 @@
+mixin snippet
+  pre
+    button(onclick='document.documentElement.classList.toggle("demo-theme")') Try it
+    code.
+      &lt;head&gt;
+        &lt;link rel="stylesheet" href="slide.css" /&gt;
+        &lt;style&gt;
+          :root {
+            --c-bg: blanchedalmond;
+            --c-neutral: floralwhite;
+            --c-primary: tomato;
+            --c-accent: linen;
+            --c-lines: black;
+            --c-shadows: var(--c-primary);
+            --slide-width: 80ch;
+          }
+        &lt;/style&gt;
+      &lt;/head&gt;
+
+section#customisation
+  hgroup
+    h3: a(href="#customisation") Customisation
+    p Slide uses CSS variables in a base layer for the basic theme.
+  p This means you can easily override them:
+  +snippet

@@ -1,0 +1,20 @@
+mixin snippet
+ pre: code.
+   &lt;body&gt;
+     &lt;header&gt;
+       &lt;span&gt;My Logo&lt;/span&gt;
+     &lt;/header&gt;
+     &lt;main&gt;
+       ...
+     &lt;/main&gt;
+     &lt;footer&gt;
+       &lt;a href="/somewhere"&gt;Some Where&lt;/a&gt;
+     &lt;/footer&gt;
+   &lt;/body&gt;
+
+section#persistent-content
+  h3: a(href="#persistent-content") Persistent Content
+  p.
+    A #[code header] or #[code footer] as a direct child of #[code body] will
+    be fixed and shown on all slides.
+  +snippet

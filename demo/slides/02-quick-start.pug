@@ -1,0 +1,22 @@
+mixin snippet
+  pre: code.
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;My Slide&lt;/title&gt;
+        &lt;link rel="stylesheet" href="slide.css" /&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;main&gt;
+          &lt;section&gt;
+            &lt;h1&gt;My First Slide&lt;/h1&gt;
+            &lt;p&gt;You're gonna love it.&lt;/p&gt;
+          &lt;/section&gt;
+        &lt;/main&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+
+section#quick-start
+  hgroup
+    h2: a(href="#quick-start") Quick Start
+    p It&apos;s simple
+  +snippet

@@ -1,0 +1,24 @@
+mixin snippet_section
+  pre: code.
+    &lt;main&gt;
+      &lt;section&gt;
+        &lt;h1&gt;Bananas&lt;/h1&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+
+mixin snippet_description
+  pre: code.
+    &lt;section&gt;
+      &lt;hgroup&gt;
+        &lt;h1&gt;Bananas&lt;/h1&gt;
+        &lt;p&gt;Facts about our yellow fruit&lt;/p&gt;
+      &lt;/hgroup&gt;
+      ...
+    &lt;/section&gt;
+
+section#basic-usage
+  h3: a(href="#basic-usage") Basic Usage
+  p A #[code section] acts as a slide when placed within #[code main].
+  +snippet_section
+  p You can add a description below a heading via an  #[code hgroup]:
+  +snippet_description

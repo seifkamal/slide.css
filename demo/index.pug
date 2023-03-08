@@ -1,0 +1,18 @@
+html(lang="en")
+  head
+    title slide.css
+    meta(name="description" content="A minimal stylesheet for creating HTML presentations")
+    meta(name="viewport" content="width=device-width")
+    style: include ../slide.css
+    style: include index.css
+    body
+      header: ul: li: span.logo slide.css
+      main
+        include slides/01-intro
+        include slides/02-quick-start
+        include slides/03-basic-usage
+        include slides/04-persistent-content
+        include slides/05-customisation
+        include slides/06-formatting
+        include slides/07-outro
+      footer(dir="rtl"): ul: li: a(href="#intro") Back to top

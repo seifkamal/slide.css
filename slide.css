@@ -1,0 +1,225 @@
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+}
+
+@layer base {
+  main {
+    height: 100vh;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+  }
+
+  main > section {
+    height: 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+}
+
+@layer theme {
+  :root {
+    --c-fg: black;
+    --c-bg: snow;
+    --c-primary: royalblue;
+    --c-neutral: lavender;
+    --c-notice: orange;
+    --c-lines: var(--c-neutral);
+    --c-shadows: var(--c-primary);
+    --slide-width: 65ch;
+
+    font-family: sans-serif;
+    background-color: var(--c-bg);
+    color: var(--c-fg);
+  }
+
+  ::selection {
+    background-color: var(--c-primary);
+    color: var(--c-bg);
+  }
+
+  main {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+    padding: 1rem;
+  }
+
+  header {
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+  }
+
+  :is(header, footer) > ul {
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  :is(header, footer) > ul > li {
+    margin: 0;
+  }
+
+  section {
+    width: min(var(--slide-width), 100%);
+    margin-inline: auto;
+    padding-block: 2rem;
+    overflow: hidden;
+  }
+
+  section > :is(h1, h2, h3),
+  hgroup {
+    margin-block-end: 1.5rem;
+  }
+
+  section > h1,
+  hgroup:has(> h1) {
+    margin-block-start: 8rem;
+  }
+
+  hgroup:has(> h1) > p {
+    font-size: 2em;
+  }
+
+  section > h3,
+  hgroup:has(> h3) {
+    border-bottom: 2px solid var(--c-lines);
+  }
+
+  section > h3 {
+    padding-block-end: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  a {
+    color: var(--c-primary);
+    text-decoration: none;
+  }
+
+  :is(h1, h2, h3) > a[href^="#"]:not(:empty)::before {
+    content: "# ";
+    color: var(--c-primary);
+    opacity: 0.6;
+  }
+
+  :is(h1, h2, h3) > a[href^="#"]:not(:empty):hover::before {
+    opacity: 0.9;
+  }
+
+  blockquote {
+    opacity: 0.8;
+    margin-inline-start: 0;
+    border-inline-start: 0.5rem solid var(--c-neutral);
+    padding-inline-start: 0.5rem;
+  }
+
+  pre {
+    position: relative;
+    padding: 8px;
+    margin-inline: 4px;
+    border-radius: 4px;
+    border: 4px solid var(--c-lines);
+    box-shadow: -4px 4px 0 0 var(--c-shadows);
+    background-color: var(--c-neutral);
+    overflow: scroll;
+  }
+
+  pre > button:first-child {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  :not(pre) > code {
+    padding-inline: 4px;
+    border-radius: 4px;
+    background-color: var(--c-neutral);
+  }
+
+  :is(ol, ul) > li {
+    margin-block-end: 0.5rem;
+  }
+
+  details {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 2px dashed var(--c-lines);
+  }
+
+  details > summary {
+    padding: 16px 0;
+    color: var(--c-primary);
+  }
+
+  details > summary::marker {
+    content: "?› ";
+  }
+
+  details[open] > summary {
+    border-bottom: 2px dashed var(--c-lines);
+  }
+
+  abbr {
+    border-radius: 4px;
+    padding: 4px;
+    background-color: var(--c-notice);
+  }
+
+  button {
+    all: unset;
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid var(--c-lines);
+    background-color: var(--c-bg);
+    padding: 4px;
+    transition: box-shadow 100ms ease-out, transform 100ms ease-out;
+  }
+
+  button:hover {
+    box-shadow: -2px 2px 0 0 var(--c-shadows);
+    transform: translateY(-2px) translateX(2px);
+  }
+
+  figure {
+    font-size: 1rem;
+    text-align: center;
+    margin-inline: 4px;
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+  }
+
+  figure > img {
+    width: 100%;
+    border: 2px solid var(--c-lines);
+    border-radius: 4px;
+    box-shadow: -4px 4px 0 0 var(--c-shadows);
+  }
+}
