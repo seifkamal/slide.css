@@ -6,7 +6,9 @@ html(lang="en")
     style: include ../slide.css
     style: include index.css
     body
-      header: ul: li: span.logo slide.css
+      header: ul
+        li: span.logo slide.css
+        li: a(href="https://github.com/seifkamal/slide.css"): include github.svg
       main
         include slides/01-intro
         include slides/02-quick-start
